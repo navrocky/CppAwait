@@ -13,4 +13,8 @@ if (NOT MINGW)
     add_precompiled_header (stdafx.h _src_cxx)
 endif()
 
-add_library (cpp_await ${_src_cxx} ${_src_h} ${_public_h} ${_public_misc_h} ${_public_impl_h})
+set(TARGET cpp_await)
+
+add_library (${TARGET} ${_src_cxx} ${_src_h} ${_public_h} ${_public_misc_h} ${_public_impl_h})
+
+target_link_libraries (${TARGET} ${Boost_LIBRARIES})

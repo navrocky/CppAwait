@@ -43,7 +43,7 @@ add_definitions (-DBOOST_ALL_NO_LIB)
 #
 
 if (CMAKE_COMPILER_IS_GNUCXX)
-    add_definitions (--std=gnu++0x -Wno-unused-parameter)
+    add_definitions (--std=gnu++0x -Wno-unused-parameter -Wno-unused-local-typedefs)
 elseif (MSVC)
     add_definitions (/wd4100 /wd4127 /wd4913)
 endif()
